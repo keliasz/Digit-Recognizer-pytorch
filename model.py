@@ -51,7 +51,6 @@ class CNNModel(nn.Module):
         loss_f = nn.CrossEntropyLoss()
         for epoch in range(num_epochs):
             for i, (images, labels) in enumerate(train_loader):
-                # TODO why 100? it should be batch_size? 
                 train = Variable(images.view(batch_size, 1, 28, 28))
                 labels = Variable(labels)
                 optimizer = torch.optim.SGD(self.parameters(), lr=learning_rate)

@@ -13,13 +13,3 @@ mnist_testset = datasets.MNIST(root='./data', train=False, download=True, transf
 
 train_dataloader = torch.utils.data.DataLoader(mnist_trainset, batch_size=BATCH_SIZE)
 test_dataloader = torch.utils.data.DataLoader(mnist_testset, batch_size=BATCH_SIZE)
-
-if __name__ == "__main__":
-    # visualize train dataset
-    for n, img in enumerate(train_dataloader.dataset):
-        if n<9:
-            plt.subplot(3, 3, n+1)
-            plt.imshow(img[0])
-            plt.title(f'{img[1]}')
-    plt.gcf().set_size_inches(8, 9)
-    plt.show()
